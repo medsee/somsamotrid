@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profilim | Somsa.uz Motrid</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo"><div class="logo-icon">🥟</div><div class="logo-text"><span>Somsa</span><strong>.uz</strong> Motrid</div></a>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html" class="nav__link">Bosh sahifa</a></li>
+        <li><a href="menu.html" class="nav__link">Menyu</a></li>
+        <li><a href="order.html" class="nav__link">Buyurtma</a></li>
+        <li><a href="track.html" class="nav__link">Kuzatish</a></li>
+      </ul>
+      <div class="nav__actions">
+        <div class="nav__user" id="navUser"></div>
+        <a href="order.html" class="nav__cart"><i class="fas fa-shopping-basket"></i><span class="cart-badge" id="cartBadge">0</span></a>
+        <button class="nav__toggle" id="navToggle"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+  <div class="profile-page">
+    <div class="container">
+      <!-- Profile header -->
+      <div class="profile-header">
+        <div class="profile-avatar" id="profileAvatar"><div class="online-dot"></div>?</div>
+        <div class="profile-info">
+          <div class="profile-name" id="profileName">Yuklanmoqda...</div>
+          <div class="profile-phone" id="profilePhone"></div>
+          <div class="profile-meta">
+            <div class="profile-meta-item"><i class="fas fa-calendar-alt"></i><span id="profileMember">A'zo bo'lgan sana</span></div>
+            <div class="profile-meta-item"><i class="fas fa-map-marker-alt"></i><span>Samarqand</span></div>
+          </div>
+        </div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;align-self:flex-start">
+          <button class="btn btn--outline btn--sm" onclick="switchProfileTab('settings')"><i class="fas fa-cog"></i> Sozlamalar</button>
+          <button class="btn btn--sm" style="background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.3)" onclick="handleLogout()"><i class="fas fa-sign-out-alt"></i> Chiqish</button>
+        </div>
+      </div>
+      <!-- Bonus card -->
+      <div class="bonus-card">
+        <div class="bonus-label">⭐ Bonus balllar</div>
+        <div class="bonus-points"><span id="bonusPoints">0</span> <span style="font-size:1rem;color:var(--gray)">ball</span></div>
+        <div style="font-size:.8rem;color:var(--gray);margin-top:.35rem">≈ <strong id="bonusValue" style="color:#c4b5fd">0 so'm</strong> qiymatida</div>
+        <div style="margin-top:1rem">
+          <div style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--gray);margin-bottom:.4rem"><span>Keyingi darajaga</span><span id="bonusProgressVal">0 / 500</span></div>
+          <div class="bonus-bar"><div class="bonus-bar-fill" id="bonusBarFill" style="width:0%"></div></div>
+        </div>
+        <div style="font-size:.8rem;color:var(--gray);margin-top:.5rem" id="bonusNextText"></div>
+      </div>
+      <!-- Stats -->
+      <div class="profile-stats">
+        <div class="stat-box"><div class="stat-box__icon">🛍️</div><div class="stat-box__num" id="statOrders">0</div><div class="stat-box__label">Buyurtmalar</div></div>
+        <div class="stat-box"><div class="stat-box__icon">💰</div><div class="stat-box__num" id="statSpent">0</div><div class="stat-box__label">Sarflagan (so'm)</div></div>
+        <div class="stat-box"><div class="stat-box__icon">❤️</div><div class="stat-box__num" id="statFavorites">0</div><div class="stat-box__label">Sevimlilar</div></div>
+        <div class="stat-box"><div class="stat-box__icon">⭐</div><div class="stat-box__num" id="statLevel" style="font-size:1rem">—</div><div class="stat-box__label">Daraja</div></div>
+      </div>
+      <!-- Tabs -->
+      <div class="profile-tabs">
+        <button class="profile-tab active" onclick="switchProfileTab('orders')"><i class="fas fa-list-alt"></i> Buyurtmalar</button>
+        <button class="profile-tab" onclick="switchProfileTab('bonus')"><i class="fas fa-star"></i> Bonus</button>
+        <button class="profile-tab" onclick="switchProfileTab('favorites')"><i class="fas fa-heart"></i> Sevimlilar</button>
+        <button class="profile-tab" onclick="switchProfileTab('settings')"><i class="fas fa-cog"></i> Sozlamalar</button>
+      </div>
+      <!-- Orders tab -->
+      <div class="profile-tab-content active" id="tab-orders">
+        <div class="order-history" id="orderHistory"><div style="text-align:center;padding:2rem;color:var(--gray)"><span class="spinner"></span></div></div>
+      </div>
+      <!-- Bonus tab -->
+      <div class="profile-tab-content" id="tab-bonus">
+        <div class="bonus-history" id="bonusHistory"></div>
+      </div>
+      <!-- Favorites tab -->
+      <div class="profile-tab-content" id="tab-favorites">
+        <div class="favorites-grid" id="favoritesGrid"></div>
+      </div>
+      <!-- Settings tab -->
+      <div class="profile-tab-content" id="tab-settings">
+        <div class="settings-card">
+          <div class="settings-section">
+            <div class="settings-section-title">Shaxsiy ma'lumotlar</div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label">Ism Familiya</label><input type="text" id="settingName" class="form-input" placeholder="Ism Familiya"/></div>
+              <div class="form-group"><label class="form-label">Telefon</label><input type="tel" id="settingPhone" class="form-input" readonly style="opacity:.6"/></div>
+            </div>
+            <div class="form-group"><label class="form-label">Email</label><input type="email" id="settingEmail" class="form-input" placeholder="email@example.com"/></div>
+            <div class="form-group"><label class="form-label">Asosiy manzil</label><input type="text" id="settingAddress" class="form-input" placeholder="Ko'cha, uy, mo'ljal"/></div>
+            <button class="btn btn--primary" onclick="saveSettings()"><i class="fas fa-save"></i> Saqlash</button>
+          </div>
+          <div class="settings-section">
+            <div class="settings-section-title">Parolni o'zgartirish</div>
+            <div class="form-group"><label class="form-label">Joriy parol</label><input type="password" id="currentPwd" class="form-input" placeholder="••••••••"/></div>
+            <div class="form-group"><label class="form-label">Yangi parol</label><input type="password" id="newPwd" class="form-input" placeholder="Kamida 8 belgi"/></div>
+            <div class="form-group"><label class="form-label">Tasdiqlash</label><input type="password" id="confirmPwd" class="form-input" placeholder="Parolni qaytaring"/></div>
+            <button class="btn btn--outline" onclick="changePassword()"><i class="fas fa-key"></i> O'zgartirish</button>
+          </div>
+          <div class="settings-section">
+            <div class="settings-section-title">Bildirishnomalar</div>
+            <div class="notif-row"><div class="notif-info"><div class="notif-title">Buyurtma holati</div><div class="notif-desc">Yangilanganda xabar</div></div><label class="toggle-switch"><input type="checkbox" checked onchange="saveNotifPref('orders',this.checked)"/><span class="toggle-slider"></span></label></div>
+            <div class="notif-row"><div class="notif-info"><div class="notif-title">Aksiyalar</div><div class="notif-desc">Maxsus takliflar</div></div><label class="toggle-switch"><input type="checkbox" checked onchange="saveNotifPref('promos',this.checked)"/><span class="toggle-slider"></span></label></div>
+            <div class="notif-row"><div class="notif-info"><div class="notif-title">Bonus balllar</div><div class="notif-desc">Ball qo'shilganda</div></div><label class="toggle-switch"><input type="checkbox" checked onchange="saveNotifPref('bonus',this.checked)"/><span class="toggle-slider"></span></label></div>
+          </div>
+          <div class="settings-section">
+            <div class="settings-section-title" style="color:var(--red)">Xavfli hudud</div>
+            <div class="danger-zone"><h4><i class="fas fa-exclamation-triangle"></i> Hisobni o'chirish</h4><p>Bu amalni qaytarib bo'lmaydi. Barcha ma'lumotlar yo'qoladi.</p><button class="btn btn--sm" style="background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3)" onclick="confirmDeleteAccount()"><i class="fas fa-trash-alt"></i> O'chirish</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer"><div class="container"><div class="footer__bottom" style="justify-content:center"><p>© 2025 Somsa.uz Motrid</p></div></div></footer>
+  <button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="app.js"></script>
+</body>
+</html>
