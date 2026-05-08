@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kuzatish | Somsa.uz Motrid</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo"><div class="logo-icon">🥟</div><div class="logo-text"><span>Somsa</span><strong>.uz</strong> Motrid</div></a>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html" class="nav__link">Bosh sahifa</a></li>
+        <li><a href="menu.html" class="nav__link">Menyu</a></li>
+        <li><a href="order.html" class="nav__link">Buyurtma</a></li>
+        <li><a href="track.html" class="nav__link active">Kuzatish</a></li>
+        <li><a href="contact.html" class="nav__link">Aloqa</a></li>
+      </ul>
+      <div class="nav__actions">
+        <div class="nav__user" id="navUser"></div>
+        <a href="order.html" class="nav__cart"><i class="fas fa-shopping-basket"></i><span class="cart-badge" id="cartBadge">0</span></a>
+        <button class="nav__toggle" id="navToggle"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Buyurtmani <span class="text-purple">Kuzatish</span></h1>
+      <p class="page-hero__sub">Buyurtmangiz qayerda ekanini tekshiring</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="track-search-wrap">
+        <div class="track-search">
+          <input type="text" id="trackInput" class="form-input track-search__input" placeholder="Buyurtma raqami (#1001)"/>
+          <button class="btn btn--primary" id="trackBtn"><i class="fas fa-search"></i> Qidirish</button>
+        </div>
+      </div>
+      <div class="track-result hidden" id="trackResult">
+        <div class="track-card">
+          <div class="track-card__header">
+            <div>
+              <p class="track-card__label">Buyurtma raqami</p>
+              <h2 class="track-card__num" id="trackOrderNum">#0000</h2>
+            </div>
+            <div class="track-card__eta"><i class="fas fa-clock"></i><span>Taxminiy: <strong id="trackEta">—</strong></span></div>
+          </div>
+          <div class="track-progress">
+            <div class="track-progress__bar"><div class="track-progress__fill" id="progressFill"></div></div>
+            <div class="track-steps" id="trackSteps">
+              <div class="track-step" data-step="1"><div class="track-step__icon"><i class="fas fa-clipboard-check"></i></div><span class="track-step__label">Qabul qilindi</span></div>
+              <div class="track-step" data-step="2"><div class="track-step__icon"><i class="fas fa-fire"></i></div><span class="track-step__label">Tayyorlanmoqda</span></div>
+              <div class="track-step" data-step="3"><div class="track-step__icon"><i class="fas fa-motorcycle"></i></div><span class="track-step__label">Yo'lda</span></div>
+              <div class="track-step" data-step="4"><div class="track-step__icon"><i class="fas fa-house-circle-check"></i></div><span class="track-step__label">Yetkazildi</span></div>
+            </div>
+          </div>
+          <div class="track-details" id="trackDetails"></div>
+        </div>
+        <div class="track-demo" style="margin-top:1.5rem">
+          <p class="track-demo__label">Demo — statusni sinab ko'ring:</p>
+          <div class="track-demo__btns">
+            <button class="btn btn--sm btn--outline" onclick="KingSomsa.track?.setStep(1)">Qabul</button>
+            <button class="btn btn--sm btn--outline" onclick="KingSomsa.track?.setStep(2)">Tayyorlanmoqda</button>
+            <button class="btn btn--sm btn--outline" onclick="KingSomsa.track?.setStep(3)">Yo'lda</button>
+            <button class="btn btn--sm btn--primary" onclick="KingSomsa.track?.setStep(4)">Yetkazildi ✓</button>
+          </div>
+        </div>
+      </div>
+      <div class="track-notfound hidden" id="trackNotFound" style="text-align:center;padding:4rem;color:var(--gray)">
+        <div class="empty-icon">❓</div>
+        <h3>Buyurtma topilmadi</h3>
+        <p>Raqamni tekshirib qayta urinib ko'ring</p>
+      </div>
+    </div>
+  </section>
+  <footer class="footer"><div class="container"><div class="footer__bottom" style="justify-content:center"><p>© 2025 Somsa.uz Motrid</p></div></div></footer>
+  <button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="app.js"></script>
+</body>
+</html>
