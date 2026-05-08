@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menyu | Somsa.uz Motrid</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo"><div class="logo-icon">🥟</div><div class="logo-text"><span>Somsa</span><strong>.uz</strong> Motrid</div></a>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html" class="nav__link">Bosh sahifa</a></li>
+        <li><a href="menu.html" class="nav__link active">Menyu</a></li>
+        <li><a href="order.html" class="nav__link">Buyurtma</a></li>
+        <li><a href="track.html" class="nav__link">Kuzatish</a></li>
+        <li><a href="contact.html" class="nav__link">Aloqa</a></li>
+      </ul>
+      <div class="nav__actions">
+        <div class="nav__user" id="navUser"></div>
+        <a href="order.html" class="nav__cart"><i class="fas fa-shopping-basket"></i><span class="cart-badge" id="cartBadge">0</span></a>
+        <button class="nav__toggle" id="navToggle"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Bizning <span class="text-purple">Menyumiz</span></h1>
+      <p class="page-hero__sub">15 xil somsa va boshqa mazali taomlar</p>
+    </div>
+  </div>
+
+  <section class="menu-page section">
+    <div class="container">
+      <div class="menu-controls">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="menuSearch" placeholder="Taom qidirish..." class="search-input"/>
+        </div>
+        <div class="category-tabs" id="categoryTabs">
+          <button class="cat-tab active" data-cat="all"><span>🍽️</span> Barchasi</button>
+          <button class="cat-tab" data-cat="somsa"><span>🥟</span> Somsalar</button>
+          <button class="cat-tab" data-cat="bichak"><span>🥬</span> Bichaklar</button>
+          <button class="cat-tab" data-cat="fatir"><span>🫓</span> Fatirlar</button>
+          <button class="cat-tab" data-cat="other"><span>🍩</span> Boshqalar</button>
+        </div>
+      </div>
+      <div class="food-grid" id="menuGrid"></div>
+      <div class="menu__empty hidden" id="menuEmpty">
+        <div class="empty-icon">🔍</div>
+        <h3>Hech narsa topilmadi</h3>
+        <p>Boshqa kalit so'z bilan qidiring</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container"><div class="footer__bottom" style="justify-content:center"><p>© 2025 Somsa.uz Motrid | (97) 921-37-22 | Samarqand</p></div></div></footer>
+  <button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="app.js"></script>
+</body>
+</html>
