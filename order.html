@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buyurtma | Somsa.uz Motrid</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo"><div class="logo-icon">🥟</div><div class="logo-text"><span>Somsa</span><strong>.uz</strong> Motrid</div></a>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html" class="nav__link">Bosh sahifa</a></li>
+        <li><a href="menu.html" class="nav__link">Menyu</a></li>
+        <li><a href="order.html" class="nav__link active">Buyurtma</a></li>
+        <li><a href="track.html" class="nav__link">Kuzatish</a></li>
+        <li><a href="contact.html" class="nav__link">Aloqa</a></li>
+      </ul>
+      <div class="nav__actions">
+        <div class="nav__user" id="navUser"></div>
+        <a href="order.html" class="nav__cart"><i class="fas fa-shopping-basket"></i><span class="cart-badge" id="cartBadge">0</span></a>
+        <button class="nav__toggle" id="navToggle"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Sizning <span class="text-purple">Savatingiz</span></h1>
+      <p class="page-hero__sub">Buyurtmani tekshiring va to'lash usulini tanlang</p>
+    </div>
+  </div>
+
+  <section class="order-page section">
+    <div class="container">
+      <div class="order__layout">
+
+        <!-- SAVAT -->
+        <div class="order__cart">
+          <h2 class="order__section-title"><i class="fas fa-shopping-basket"></i> Savat</h2>
+          <div class="cart__items" id="cartItems"></div>
+          <div class="cart__empty hidden" id="cartEmpty">
+            <div class="empty-icon">🛒</div>
+            <h3>Savat bo'sh</h3>
+            <p>Menyudan somsalar tanlang</p>
+            <a href="menu.html" class="btn btn--primary">Menyuga o'tish</a>
+          </div>
+        </div>
+
+        <!-- FORMA -->
+        <div class="order__form-wrap" id="orderFormWrap">
+
+          <!-- Yetkazish -->
+          <div style="margin-bottom:1.5rem">
+            <h2 class="order__section-title"><i class="fas fa-truck"></i> Yetkazib berish</h2>
+            <div class="delivery-options">
+              <label class="delivery-option">
+                <input type="radio" name="delivery" value="delivery" checked/>
+                <div class="delivery-option__card"><i class="fas fa-motorcycle"></i><span>Yetkazib berish</span><small>+5 000 so'm</small></div>
+              </label>
+              <label class="delivery-option">
+                <input type="radio" name="delivery" value="pickup"/>
+                <div class="delivery-option__card"><i class="fas fa-store"></i><span>O'zi olib ketish</span><small>Bepul</small></div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Mijoz -->
+          <div style="margin-bottom:1.5rem">
+            <h2 class="order__section-title"><i class="fas fa-user"></i> Ma'lumotlaringiz</h2>
+            <div class="form-group">
+              <label class="form-label">Ismingiz *</label>
+              <input type="text" id="custName" class="form-input" placeholder="Ism Familiya"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Telefon *</label>
+              <div class="phone-input-wrap">
+                <span class="phone-prefix">+998</span>
+                <input type="tel" id="custPhone" class="form-input" placeholder="97 921 37 22" maxlength="12"/>
+              </div>
+            </div>
+            <div class="form-group" id="addressGroup">
+              <label class="form-label">Manzil *</label>
+              <input type="text" id="custAddress" class="form-input" placeholder="Ko'cha, uy raqami, mo'ljal"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Izoh (ixtiyoriy)</label>
+              <textarea id="custNote" class="form-input form-textarea" placeholder="Qo'shimcha xohish..."></textarea>
+            </div>
+          </div>
+
+          <!-- TO'LOV -->
+          <div style="margin-bottom:1.5rem">
+            <h2 class="order__section-title"><i class="fas fa-credit-card"></i> To'lov usuli</h2>
+            <div class="payment-options">
+              <label class="pay-option">
+                <input type="radio" name="payment" value="cash" checked/>
+                <div class="pay-option__card"><span class="pay-logo">💵</span><span>Naqd pul</span><small>Yetkazganda</small></div>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="payment" value="card"/>
+                <div class="pay-option__card"><span class="pay-logo">💳</span><span>Karta</span><small>Yetkazganda</small></div>
+              </label>
+              <label class="pay-option click">
+                <input type="radio" name="payment" value="click"/>
+                <div class="pay-option__card"><span class="pay-logo">🔵</span><span>Click</span><small>Onlayn</small></div>
+              </label>
+              <label class="pay-option payme">
+                <input type="radio" name="payment" value="payme"/>
+                <div class="pay-option__card"><span class="pay-logo">🟢</span><span>Payme</span><small>Onlayn</small></div>
+              </label>
+            </div>
+            <div class="pay-redirect-hint" id="payRedirectHint">
+              <i class="fas fa-info-circle"></i>
+              <span>Buyurtma berilgandan keyin to'lov sahifasiga yo'naltirilasiz</span>
+            </div>
+          </div>
+
+          <!-- XULOSA -->
+          <div class="order-summary">
+            <h2 class="order__section-title"><i class="fas fa-receipt"></i> Xulosa</h2>
+            <div class="summary__lines">
+              <div class="summary__line"><span>Taomlar</span><span id="sumItems">0 so'm</span></div>
+              <div class="summary__line" id="deliveryLine"><span>Yetkazib berish</span><span>5 000 so'm</span></div>
+              <div class="summary__line summary__line--total"><span>Jami</span><span id="sumTotal">0 so'm</span></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:.75rem;margin-top:1rem">
+              <button class="btn btn--primary btn--full" id="placeOrderBtn">
+                <i class="fas fa-check-circle"></i> Buyurtma berish
+              </button>
+              <button class="btn btn--full hidden" id="clickPayBtn" style="background:#09f;border-color:#09f;color:#fff">
+                <i class="fas fa-bolt"></i> Click bilan to'lash
+              </button>
+              <button class="btn btn--full hidden" id="paymePayBtn" style="background:#1ac47d;border-color:#1ac47d;color:#fff">
+                <i class="fas fa-leaf"></i> Payme bilan to'lash
+              </button>
+            </div>
+            <div style="margin-top:.75rem;font-size:.8rem;color:var(--gray);display:flex;align-items:center;gap:.4rem">
+              <i class="fab fa-telegram" style="color:#0088cc"></i>
+              Buyurtma Telegram orqali tasdiqlanadi
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Muvaffaqiyat modali -->
+  <div class="modal-overlay hidden" id="successModal">
+    <div class="modal">
+      <div class="modal__icon">✅</div>
+      <h2 class="modal__title">Buyurtma qabul qilindi!</h2>
+      <p class="modal__text">Buyurtma raqamingiz:</p>
+      <div class="modal__order-num" id="modalOrderNum">#0000</div>
+      <p class="modal__text" style="margin-bottom:1.5rem">Tez orada qo'ng'iroq qilamiz!</p>
+      <a href="track.html" class="btn btn--primary"><i class="fas fa-map-marker-alt"></i> Kuzatish</a>
+    </div>
+  </div>
+
+  <!-- To'lov modali -->
+  <div class="modal-overlay hidden" id="paymentModal">
+    <div class="modal">
+      <div class="modal__icon" id="payModalIcon">💳</div>
+      <h2 class="modal__title" id="payModalTitle">To'lov...</h2>
+      <div class="modal__order-num" id="payModalOrderNum">#0000</div>
+      <p class="modal__text" style="margin:.75rem 0">Jami: <strong id="payModalAmount" style="color:var(--purple-light)"></strong></p>
+      <p class="modal__text" style="font-size:.8rem;color:var(--gray);margin-bottom:1.5rem">To'lov yangi oynada ochiladi.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center">
+        <a href="#" class="btn btn--primary" id="payNowBtn" target="_blank"><i class="fas fa-external-link-alt"></i> To'lashga o'tish</a>
+        <a href="track.html" class="btn btn--outline">Keyinroq to'layman</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer"><div class="container"><div class="footer__bottom" style="justify-content:center"><p>© 2025 Somsa.uz Motrid | Samarqand</p></div></div></footer>
+  <button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="app.js"></script>
+</body>
+</html>
