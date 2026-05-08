@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aloqa | Somsa.uz Motrid</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo"><div class="logo-icon">🥟</div><div class="logo-text"><span>Somsa</span><strong>.uz</strong> Motrid</div></a>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html" class="nav__link">Bosh sahifa</a></li>
+        <li><a href="menu.html" class="nav__link">Menyu</a></li>
+        <li><a href="order.html" class="nav__link">Buyurtma</a></li>
+        <li><a href="track.html" class="nav__link">Kuzatish</a></li>
+        <li><a href="contact.html" class="nav__link active">Aloqa</a></li>
+      </ul>
+      <div class="nav__actions">
+        <div class="nav__user" id="navUser"></div>
+        <a href="order.html" class="nav__cart"><i class="fas fa-shopping-basket"></i><span class="cart-badge" id="cartBadge">0</span></a>
+        <button class="nav__toggle" id="navToggle"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Biz bilan <span class="text-purple">Bog'lanish</span></h1>
+      <p class="page-hero__sub">Savollaringiz bo'lsa — doimo yordam berishga tayyormiz</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="contact__layout">
+        <div class="contact__info">
+          <div class="contact-card">
+            <div class="contact-card__icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <h3>Telefon</h3>
+              <a href="tel:+998979213722" class="contact-card__link">(97) 921-37-22</a><br/>
+              <a href="tel:+998889370909" class="contact-card__link">(88) 937-09-09</a>
+              <p class="contact-card__note">07:00 – 20:00</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h3>Manzil</h3>
+              <p class="contact-card__link">Samarqand shahar</p>
+              <p class="contact-card__note">Motrid filiali</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <h3>Ish vaqti</h3>
+              <div class="hours-table">
+                <div class="hours-row"><span>Du – Sha</span><span>07:00 – 20:00</span></div>
+                <div class="hours-row"><span>Yakshanba</span><span>07:00 – 18:00</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__icon"><i class="fab fa-instagram"></i></div>
+            <div>
+              <h3>Instagram</h3>
+              <a href="https://instagram.com/somsa.uzmotrid" target="_blank" class="contact-card__link">@somsa.uzmotrid</a>
+              <p class="contact-card__note">21,600+ obunachilar</p>
+              <div class="social-btns" style="margin-top:.5rem">
+                <a href="https://instagram.com/somsa.uzmotrid" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-telegram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact__right">
+          <div class="map-wrap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.2!2d66.9597!3d39.6270!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDM3JzM3LjIiTiA2NsKwNTcnMzQuOSJF!5e0!3m2!1suz!2suz!4v1700000000000!5m2!1suz!2suz" width="100%" height="280" style="border:0;border-radius:var(--radius)" allowfullscreen loading="lazy" title="Somsa.uz Motrid joylashuvi"></iframe>
+          </div>
+          <div class="contact-form-wrap">
+            <h2 class="order__section-title"><i class="fas fa-envelope"></i> Murojaat qiling</h2>
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group"><label class="form-label">Ismingiz *</label><input type="text" id="contName" class="form-input" placeholder="Ismingiz"/></div>
+                <div class="form-group"><label class="form-label">Telefon *</label><input type="tel" id="contPhone" class="form-input" placeholder="+998 97 921 37 22"/></div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Mavzu</label>
+                <select id="contSubject" class="form-input">
+                  <option>Buyurtma haqida savol</option>
+                  <option>Sifat haqida fikr</option>
+                  <option>Hamkorlik taklifi</option>
+                  <option>Boshqa</option>
+                </select>
+              </div>
+              <div class="form-group"><label class="form-label">Xabar *</label><textarea id="contMessage" class="form-input form-textarea" rows="4" placeholder="Xabaringizni yozing..."></textarea></div>
+              <button type="submit" class="btn btn--primary btn--full"><i class="fas fa-paper-plane"></i> Yuborish</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer"><div class="container"><div class="footer__bottom" style="justify-content:center"><p>© 2025 Somsa.uz Motrid | (97) 921-37-22 | Samarqand</p></div></div></footer>
+  <button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="app.js"></script>
+</body>
+</html>
