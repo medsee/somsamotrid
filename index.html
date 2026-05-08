@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Somsa.uz Motrid | Samarqand</title>
+  <meta name="description" content="Samarqandning eng mazali somsasi. Tandir somsa, kuyovli somsa, shokoladli somsa va yana ko'p. Tez yetkazib berish!"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        <div class="logo-icon">🥟</div>
+        <div class="logo-text">
+          <span>Somsa</span><strong>.uz</strong> Motrid
+        </div>
+      </a>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html" class="nav__link active">Bosh sahifa</a></li>
+        <li><a href="menu.html" class="nav__link">Menyu</a></li>
+        <li><a href="order.html" class="nav__link">Buyurtma</a></li>
+        <li><a href="track.html" class="nav__link">Kuzatish</a></li>
+        <li><a href="contact.html" class="nav__link">Aloqa</a></li>
+      </ul>
+      <div class="nav__actions">
+        <div class="nav__user" id="navUser"></div>
+        <a href="order.html" class="nav__cart">
+          <i class="fas fa-shopping-basket"></i>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </a>
+        <button class="nav__toggle" id="navToggle"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__grid-pattern"></div>
+    <div class="container hero__content">
+      <div class="hero__badge">
+        <i class="fas fa-star"></i> Samarqandning #1 Somsasi
+      </div>
+      <h1 class="hero__title">
+        Haqiqiy<br/>
+        <span class="line2">Somsa</span><br/>
+        Ta'mi
+      </h1>
+      <p class="hero__subtitle">
+        Tandir, Kuyovli, Shokoladli va yana 12 xil somsa!<br/>
+        Har kuni yangi, issiq, mazali — siz uchun tayyorlanadi.
+      </p>
+      <div class="hero__actions">
+        <a href="order.html" class="btn btn--primary btn--lg">
+          <i class="fas fa-fire"></i> Hozir buyurtma qilish
+        </a>
+        <a href="menu.html" class="btn btn--outline btn--lg">
+          <i class="fas fa-utensils"></i> Menyuni ko'rish
+        </a>
+      </div>
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="hero__stat-num">15+</span>
+          <span class="hero__stat-label">Somsa turi</span>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">4.9★</span>
+          <span class="hero__stat-label">Reyting</span>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">7:00–20:00</span>
+          <span class="hero__stat-label">Ish vaqti</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__float-circle">
+        <div class="hero__float-emoji">🥟</div>
+        <div class="hero__orbit hero__orbit--1">🍫</div>
+        <div class="hero__orbit hero__orbit--2">🥐</div>
+        <div class="hero__orbit hero__orbit--3">☕</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MASHHUR TAOMLAR -->
+  <section class="popular section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Eng Ko'p Buyuriladigan</span>
+        <h2 class="section__title">Mashhur <span class="text-purple">Somsalar</span></h2>
+        <p class="section__subtitle">Mijozlarimiz eng yoqtirgan somsalar</p>
+      </div>
+      <div class="food-grid" id="popularGrid">
+        <div class="card--skeleton"><div class="skeleton skeleton--img"></div><div style="padding:1rem"><div class="skeleton skeleton--text"></div><div class="skeleton skeleton--text skeleton--short"></div></div></div>
+        <div class="card--skeleton"><div class="skeleton skeleton--img"></div><div style="padding:1rem"><div class="skeleton skeleton--text"></div><div class="skeleton skeleton--text skeleton--short"></div></div></div>
+        <div class="card--skeleton"><div class="skeleton skeleton--img"></div><div style="padding:1rem"><div class="skeleton skeleton--text"></div><div class="skeleton skeleton--text skeleton--short"></div></div></div>
+        <div class="card--skeleton"><div class="skeleton skeleton--img"></div><div style="padding:1rem"><div class="skeleton skeleton--text"></div><div class="skeleton skeleton--text skeleton--short"></div></div></div>
+      </div>
+      <div class="section__cta">
+        <a href="menu.html" class="btn btn--primary">
+          Barcha somsalarni ko'rish <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AFZALLIKLAR -->
+  <section class="features section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Nima Uchun Biz?</span>
+        <h2 class="section__title">Bizning <span class="text-purple">Afzalliklarimiz</span></h2>
+      </div>
+      <div class="features__grid">
+        <div class="feature-card">
+          <div class="feature-card__icon"><i class="fas fa-fire-flame-curved"></i></div>
+          <h3 class="feature-card__title">Tandir da Pishiriladi</h3>
+          <p class="feature-card__text">Haqiqiy tandirda pishirilgan somsa — mo'rt qobiq, serob ichlik. An'anaviy usul bilan tayyorlanadi.</p>
+          <div class="feature-card__num">01</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon"><i class="fas fa-leaf"></i></div>
+          <h3 class="feature-card__title">Yangi Mahsulotlar</h3>
+          <p class="feature-card__text">Har kuni ertalab yangi tayyorlanadi. Kechagi mahsulot sotilmaydi — sifat kafolatimiz!</p>
+          <div class="feature-card__num">02</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon"><i class="fas fa-tags"></i></div>
+          <h3 class="feature-card__title">Arzon Narxlar</h3>
+          <p class="feature-card__text">7 000 so'mdan boshlanadigan narxlar. Instagram ga obuna bo'ling — 5% chegirma oling!</p>
+          <div class="feature-card__num">03</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO AKSIYA -->
+  <section class="promo section">
+    <div class="container">
+      <div class="promo__card">
+        <div class="promo__content">
+          <span class="promo__badge">🔥 Aksiya</span>
+          <h2 class="promo__title">Instagram ga obuna bo'ling —<br/><span class="text-purple">5% chegirma!</span></h2>
+          <p class="promo__text">@somsa.uzmotrid — obuna bo'lib, screenshot yuborgan mijozlarimizga doimiy chegirma!</p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap">
+            <a href="order.html" class="btn btn--primary">Buyurtma berish</a>
+            <a href="https://instagram.com/somsa.uzmotrid" target="_blank" class="btn btn--outline">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+          </div>
+        </div>
+        <div class="promo__timer">
+          <div class="timer-block"><span class="timer-num" id="timerH">23</span><span class="timer-label">soat</span></div>
+          <div class="timer-sep">:</div>
+          <div class="timer-block"><span class="timer-num" id="timerM">59</span><span class="timer-label">daqiqa</span></div>
+          <div class="timer-sep">:</div>
+          <div class="timer-block"><span class="timer-num" id="timerS">59</span><span class="timer-label">soniya</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="instagram section">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title"><i class="fab fa-instagram text-purple"></i> Instagram</h2>
+        <p class="section__subtitle">@somsa.uzmotrid — bizni kuzating va 5% chegirma oling!</p>
+      </div>
+      <div class="instagram__grid">
+        <div class="insta-post" style="--i:1">🥟</div>
+        <div class="insta-post" style="--i:2">🍫</div>
+        <div class="insta-post" style="--i:3">🥐</div>
+        <div class="insta-post" style="--i:4">☕</div>
+        <div class="insta-post" style="--i:5">🧁</div>
+        <div class="insta-post" style="--i:6">🍰</div>
+      </div>
+      <div class="section__cta">
+        <a href="https://instagram.com/somsa.uzmotrid" class="btn btn--primary" target="_blank">
+          <i class="fab fa-instagram"></i> @somsa.uzmotrid ni kuzatish
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo">
+            <div class="logo-icon">🥟</div>
+            <div class="logo-text"><span>Somsa</span><strong>.uz</strong> Motrid</div>
+          </a>
+          <p class="footer__desc">Samarqandning eng mazali somsasi. Har kuni yangi, issiq va mo'ljalli!</p>
+          <div class="footer__socials">
+            <a href="https://instagram.com/somsa.uzmotrid" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer__links">
+          <h4 class="footer__heading">Sahifalar</h4>
+          <ul>
+            <li><a href="index.html">Bosh sahifa</a></li>
+            <li><a href="menu.html">Menyu</a></li>
+            <li><a href="order.html">Buyurtma</a></li>
+            <li><a href="track.html">Kuzatish</a></li>
+            <li><a href="contact.html">Aloqa</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4 class="footer__heading">Kategoriyalar</h4>
+          <ul>
+            <li><a href="menu.html?cat=somsa">Somsalar</a></li>
+            <li><a href="menu.html?cat=bichak">Bichaklar</a></li>
+            <li><a href="menu.html?cat=fatir">Fatirlar</a></li>
+            <li><a href="menu.html?cat=other">Boshqalar</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <h4 class="footer__heading">Aloqa</h4>
+          <div class="footer__info">
+            <i class="fas fa-phone"></i>
+            <div>
+              <a href="tel:+998979213722">(97) 921-37-22</a><br/>
+              <a href="tel:+998889370909">(88) 937-09-09</a>
+            </div>
+          </div>
+          <div class="footer__info">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Samarqand, O'zbekiston</span>
+          </div>
+          <div class="footer__info">
+            <i class="fas fa-clock"></i>
+            <span>07:00 – 20:00 (har kuni)</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 Somsa.uz Motrid. Barcha huquqlar himoyalangan.</p>
+        <a href="admin.html" style="color:var(--gray);font-size:0.8rem">Admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="app.js"></script>
+</body>
+</html>
